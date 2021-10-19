@@ -12,10 +12,22 @@ generator client {
 
 model User {
   id          String @id @default(uuid())
-  name        String
+  name        String?
   github_id   Int
   avatar_url  String
   login       String
 
   @@map("users")
+  Messages Message[]
+}
+
+model Message {
+  id          String @id @default(uuid())
+  text        String
+  created_at  DateTime @default(now())
+
+  user User @relation(fields: [user_id], references: [id])
+
+  @@map("messages")
+  user_id String
 }

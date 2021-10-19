@@ -6,6 +6,7 @@
     "esModuleInterop": true,   
     "forceConsistentCasingInFileNames": true,  
     "strict": false, // deixe em false 
-    "skipLibCheck": true       
+    "skipLibCheck": true,
+    "typeRoots": ["./src/@types", "node_modules/@types"],
   }
 }
