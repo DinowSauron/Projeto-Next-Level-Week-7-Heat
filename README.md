@@ -5,6 +5,42 @@ ctrl + shift + p > reload window
 ao criar seu type personalizado, coloque a propiedade ``"typeRoots": ["./src/@types", "node_modules/@types"]`` no ts.config
 
 
+Tecnologias Utilizadas:
+
+* Vite - Fast Refresh(ts, jsx, css, webpack);
+
+
+
+# aula REACT JS
+
+
+
+## Comandos utilizados:
+
+* ``yarn create vite web --template react-ts`` cria o projeto vite
+* ``cd web`` - entra no diretorio front-end
+* ``yarn`` - instala os pacotes
+* ``yarn add sass -D`` - instala o sass
+
+
+
+
+
+
+# Aula NODE JS
+
+
+
+
+## .Env Vars:
+```.env
+GITHUB_CLIENT_SECRET=...
+GITHUB_CLIENT_ID=...
+
+JWT_SECRET=... aleatory key md5
+```
+
+
 ## Requests Do Servidor:
 Preferi optar por não utilizar do insominia, pois estou estudando mais sobre o fetch então quis optar por fazer manualmente as requisições, deu super certo :D
 
