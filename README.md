@@ -1,5 +1,8 @@
 # Projeto-Next-Level-Week-7-Heat
  
+* protagonistas
+* 
+
 
 ctrl + shift + p > reload window
 ao criar seu type personalizado, coloque a propiedade ``"typeRoots": ["./src/@types", "node_modules/@types"]`` no ts.config
@@ -8,6 +11,12 @@ ao criar seu type personalizado, coloque a propiedade ``"typeRoots": ["./src/@ty
 Tecnologias Utilizadas:
 
 * Vite - Fast Refresh(ts, jsx, css, webpack);
+* Web Sockets
+* Sqlite
+* Prisma
+* React
+* Typescript
+* 
 
 
 ## Para executar:
@@ -46,7 +55,8 @@ VITE_GITHUB_CLIENT_ID=...
 * ``yarn add react-icons`` - adiciona icones no react
 * ``yarn add axios`` - cliente de requisições http (tipo express, cria e gerencia rotas)
 * redirecionar ocallback da aplicação para ``http://localhost:300`` ao invés de ``http://localhost:4000/signin/callback``
-*
+* ``yarn add socket.io-client`` - WebSockets (comunicação em tempo-real com backend)
+
 
 
 
@@ -54,10 +64,6 @@ VITE_GITHUB_CLIENT_ID=...
 
 
 # Aula NODE JS
-
-
-
-
 
 
 ## Requests Do Servidor:

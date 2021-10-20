@@ -8,6 +8,7 @@
 body {
     color: var(--gray-3);
     background-color: var(--black-2);
+    overflow-x: hidden;
 }
 
 :root {
@@ -15,13 +16,14 @@ body {
     --pink: #FF008E;
     --orange: #FFA729;
     --yellow: #FFCD1E;
-    --black-1: #09090A;
+    --black-1: #1b1b1f;
     --black-2: #121214;
     --black-3: #17171a;
     --black-4: #09090a;
-    --gray-4: #29292E;
     --gray-1: #8D8D99;
     --gray-2: #C4C4CC;
     --gray-3: #E1E1E6;
+    --gray-4: #202024;
+    --gray-5: #29292e;
     --white: #FFFFFF;
 }

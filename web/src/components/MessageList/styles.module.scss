@@ -35,12 +35,12 @@
             margin-top: 1rem;
             display: flex;
             align-items: center;
-            line-height: 0;
 
             .userImage {
                 padding: 2px;
                 background: linear-gradient(100deg, var(--pink) 0%, var(--yellow) 100%);
                 border-radius: 50px;
+                line-height: 0;
 
                 img {
                     width: 30px;
