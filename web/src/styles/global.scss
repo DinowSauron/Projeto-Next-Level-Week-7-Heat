@@ -6,6 +6,22 @@
 }
 
 body {
-    color: #e1e1e6;
-    background-color: #121214;
+    color: var(--gray-3);
+    background-color: var(--black-2);
+}
+
+:root {
+    --green: #1B873F;
+    --pink: #FF008E;
+    --orange: #FFA729;
+    --yellow: #FFCD1E;
+    --black-1: #09090A;
+    --black-2: #121214;
+    --black-3: #17171a;
+    --black-4: #09090a;
+    --gray-4: #29292E;
+    --gray-1: #8D8D99;
+    --gray-2: #C4C4CC;
+    --gray-3: #E1E1E6;
+    --white: #FFFFFF;
 }

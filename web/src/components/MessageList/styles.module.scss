@@ -1,0 +1,60 @@
+.messageListWrapper {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    > img {
+        height: 28px;
+        margin: 32px 0;
+    }
+}
+
+.messageList {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    flex: 1;
+
+    .message {
+        max-width: 440px;
+
+        &:nth-child(2) {
+            margin-left: 80px;
+        }
+
+        .messageContent {
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        .messageUser {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            line-height: 0;
+
+            .userImage {
+                padding: 2px;
+                background: linear-gradient(100deg, var(--pink) 0%, var(--yellow) 100%);
+                border-radius: 50px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50px;
+                    background-color: var(--black-4);
+                    border: 2px solid var(--black-4);
+                }
+            }
+
+            span {
+                font-size: 1rem;
+                margin-left: 12px;
+            }
+        }
+    }
+}

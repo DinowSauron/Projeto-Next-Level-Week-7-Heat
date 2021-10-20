@@ -10,6 +10,28 @@ Tecnologias Utilizadas:
 * Vite - Fast Refresh(ts, jsx, css, webpack);
 
 
+## Para executar:
+
+### .Env Vars:
+```.env 
+// Api .env
+GITHUB_CLIENT_SECRET=...
+GITHUB_CLIENT_ID=...
+
+JWT_SECRET=...aleatory_key_md5
+```
+```.env
+// Web .env
+VITE_GITHUB_CLIENT_ID=...
+```
+
+* Abra 2 terminal
+* ``cd api`` - Terminal 1
+* ``yarn prisma migrate dev`` - realizar migrações no banco de dados
+* ``yarn dev`` - Terminal 1
+* ``cd web`` - Terminal 2
+* ``yarn dev`` - Terminal 2
+
 
 # aula REACT JS
 
@@ -21,6 +43,10 @@ Tecnologias Utilizadas:
 * ``cd web`` - entra no diretorio front-end
 * ``yarn`` - instala os pacotes
 * ``yarn add sass -D`` - instala o sass
+* ``yarn add react-icons`` - adiciona icones no react
+* ``yarn add axios`` - cliente de requisições http (tipo express, cria e gerencia rotas)
+* redirecionar ocallback da aplicação para ``http://localhost:300`` ao invés de ``http://localhost:4000/signin/callback``
+*
 
 
 
@@ -32,13 +58,6 @@ Tecnologias Utilizadas:
 
 
 
-## .Env Vars:
-```.env
-GITHUB_CLIENT_SECRET=...
-GITHUB_CLIENT_ID=...
-
-JWT_SECRET=... aleatory key md5
-```
 
 
 ## Requests Do Servidor:
