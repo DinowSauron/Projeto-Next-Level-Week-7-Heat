@@ -15,8 +15,10 @@ Tecnologias Utilizadas:
 * Sqlite
 * Prisma
 * React
+* React Native
 * Typescript
-* 
+* Expo cli
+* Yarn
 
 
 ## Para executar:
@@ -33,6 +35,16 @@ JWT_SECRET=...aleatory_key_md5
 // Web .env
 VITE_GITHUB_CLIENT_ID=...
 ```
+```.env
+// Mobile env.js
+// Note que este é um arquivo .js pois a variavel será publica.
+
+const CLIENT_ID = '...'
+
+module.exports = {
+    CLIENT_ID,
+} 
+```
 
 * Abra 2 terminal
 * ``cd api`` - Terminal 1
@@ -41,6 +53,42 @@ VITE_GITHUB_CLIENT_ID=...
 * ``cd web`` - Terminal 2
 * ``yarn dev`` - Terminal 2
 
+---
+
+# aula React Native
+* necessita de um emulador ou o expo instalado no celular.
+* necessita de outro app no github, com o homepage URL e o callback URL iguals, sendo { https://auth.expo.io/@YOUR_NAME_IN_EXPO/APP_NAME_IN_APP_JSON }
+* Precisa adicionar o 'scheme' no app.json com o mesmo nome da aplicação!
+
+### Snippet para o VS Code
+Para configurar o Snippet que o Rodrigo usa durante a aula, dentro do VS Code aperte `Ctrl + Shift + P`, digite `snippet` e escolha a opção `Preferences: Configure User Snippets`: 
+Nas próximas opções, clique em `New Global Snippets file...`:
+
+Android studio AWD Emulator ajuda no desenvolvimento...
+Para mudar o tamanho adicione mais uma tela e depois redimensione, a seguir retire a tela adicionada...
+
+Extender tipagem está no Button/index.tsx
+
+* ``npm install --global expo-cli`` - instala o expo para apps mobile.
+* ``expo init mobile`` - cria um projeto, mobile sendo o nome do projeto
+* ``cd mobile`` -
+* ``expo start`` - inicia como no yarn dev
+* ``expo install expo-font @expo-google-fonts/nome_da_fonte`` - instala uma fonte da google
+    * ``expo install expo-app-loading`` - para permitir o carregamento asyncrono das fontes
+* ``expo install react-native-svg`` - svg não funciona no react native, então precisa deste modulo
+* ``expo install expo-linear-gradient`` - usar linear gradient
+* ``yarn add --dev react-native-svg-transformer`` - transformar svg em componente
+* ``yarn add react-native-iphone-x-helper`` - lida com os formatos dos celulares(aqueles chanfros no topo)
+* ``yarn add moti`` - animações de forma declarativa
+    * ``expo install react-native-reanimated`` - animações para o expo
+    * babel . config precisa do plug-in ``plugins: ['react-native-reanimated/plugin']``
+    * ``expo start -c`` - rodar apos fazer alterações (`-c` para limpar o cache)
+* ``expo install expo-auth-session expo-random`` - lida com redirecionamento para a web e retorno ao aplicativo. 
+* ``expo login`` - para reconhecer o usuário
+
+
+
+---
 
 # aula REACT JS
 
@@ -58,10 +106,7 @@ VITE_GITHUB_CLIENT_ID=...
 * ``yarn add socket.io-client`` - WebSockets (comunicação em tempo-real com backend)
 
 
-
-
-
-
+---
 
 # Aula NODE JS
 

@@ -1,7 +1,6 @@
 import axios from "axios";
 import prismaClient from "../prisma"
 import {sign} from 'jsonwebtoken'
-import express from "express";
 
 
 type IAccessTokenResponse = {
@@ -32,7 +31,7 @@ class AuthenticateUserService {
       }
     })
     // console.log(accessTokenResponse)
-
+ 
 
     const response = await axios.get<IUserResponse>("https://api.github.com/user", {
       headers: {
