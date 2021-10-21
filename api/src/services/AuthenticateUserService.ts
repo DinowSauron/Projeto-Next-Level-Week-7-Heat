@@ -16,14 +16,34 @@ type IUserResponse = {
 
 class AuthenticateUserService { 
 
-  async execute(code: string) {
+  async execute(code: string, serviceType: 'web' | 'mobile' = 'web') {
+
+    console.log("Server: User authentication, serviceType: " + serviceType)
     
     const url = "https://github.com/login/oauth/access_token";
 
+    // sistema para o backend rodar em web e mobile, o mesmo backend.
+    // caso necessite de mais sistemas, só ir adicionando as configurações e no .env
+
+    const envServiceTypes_CLIENT_ID = {
+      web: process.env.GITHUB_WEB_CLIENT_ID,
+      mobile: process.env.GITHUB_MOBILE_CLIENT_ID
+    }
+    const envServiceTypes_CLIENT_SECRET = {
+      web: process.env.GITHUB_WEB_CLIENT_SECRET,
+      mobile: process.env.GITHUB_MOBILE_CLIENT_SECRET
+    }
+
+    const CLIENT_ID = envServiceTypes_CLIENT_ID[serviceType]
+    const CLIENT_SECRET = envServiceTypes_CLIENT_SECRET[serviceType]
+
+
+
+      
     const {data: accessTokenResponse} = await axios.post<IAccessTokenResponse>(url, null, {
       params: {
-        client_id: process.env.GITHUB_CLIENT_ID,
-        client_secret: process.env.GITHUB_CLIENT_SECRET,
+        client_id: CLIENT_ID,
+        client_secret: CLIENT_SECRET,
         code,
       },
       headers: {
@@ -72,6 +92,7 @@ class AuthenticateUserService {
         expiresIn: "1d"
       }
     )
+    console.log("Server: User authentication: SUCESS")
 
     //se não existir access token retorna um aviso!
 

@@ -3,14 +3,22 @@ import { AuthenticateUserService } from "../services/AuthenticateUserService";
 
 class AuthenticateUserController {
   async handle(request: Request, response: Response) {
-    const { code } = request.body;
+    const { code, serviceType } = request.body;
     const services = new AuthenticateUserService();
+    
 
     try {
-      const result = await services.execute(code);
-      return response.json(result);
+      if(serviceType == 'web' || serviceType == undefined) {
+        const result = await services.execute(code, 'web');
+        return response.json(result);
+      }
+      if(serviceType == 'mobile') {
+        const result = await services.execute(code, 'mobile');
+        return response.json(result);
+      }
 
     }catch(err) {
+      console.log("Server: User authentication: FAILED")
       return response.json({error: err.message});
     }
 

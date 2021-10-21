@@ -1,7 +1,8 @@
 # Projeto-Next-Level-Week-7-Heat
  
-* protagonistas
-* 
+## Novidades:
+* Da forma como foi criado por min, o mesmo servidor pode ser lidado para as chamadas web e as mobile, sendo mais eficiente que o servidor do evento, onde é necessário um servidor para cada plataforma!!
+
 
 
 ctrl + shift + p > reload window
@@ -24,16 +25,21 @@ Tecnologias Utilizadas:
 ## Para executar:
 
 ### .Env Vars:
+é necessário criar 2 app no github auth, um para o mobile e outro para a web, mais o servidor é o mesmo entre os dois, pois eu configurei para que funcionasse como um 'cross-platform'
+
 ```.env 
 // Api .env
-GITHUB_CLIENT_SECRET=...
-GITHUB_CLIENT_ID=...
+GITHUB_WEB_CLIENT_SECRET=...
+GITHUB_WEB_CLIENT_ID=...
+
+GITHUB_MOBILE_CLIENT_SECRET=...
+GITHUB_MOBILE_CLIENT_ID=...
 
 JWT_SECRET=...aleatory_key_md5
 ```
 ```.env
 // Web .env
-VITE_GITHUB_CLIENT_ID=...
+VITE_GITHUB_WEB_CLIENT_ID=...
 ```
 ```.env
 // Mobile env.js
@@ -84,8 +90,10 @@ Extender tipagem está no Button/index.tsx
     * babel . config precisa do plug-in ``plugins: ['react-native-reanimated/plugin']``
     * ``expo start -c`` - rodar apos fazer alterações (`-c` para limpar o cache)
 * ``expo install expo-auth-session expo-random`` - lida com redirecionamento para a web e retorno ao aplicativo. 
-* ``expo login`` - para reconhecer o usuário
-
+    * ``expo login`` - para reconhecer o usuário (necessita estar logado para o auth)
+* ``yarn add axios`` - requisições http
+* ``expo install @react-native-async-storage/async-storage`` - guardar insformações no dispositivo (tipo localStorage)
+* ``yarn add socket.io-client`` - WebSockets receber mensagem em real-time
 
 
 ---

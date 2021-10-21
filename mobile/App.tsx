@@ -25,7 +25,7 @@ export default function App() {
     <AuthProvider>
       <StatusBar 
         style="light"
-        translucent
+        translucent={true}
         backgroundColor="transparent"
       />
       

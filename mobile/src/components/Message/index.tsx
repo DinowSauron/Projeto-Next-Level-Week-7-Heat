@@ -31,7 +31,7 @@ export function Message({data}: Props){
         </Text>
 
         <View style={styles.footer}>
-            <UserPhoto imageUri={data.user.avatar_url}/>
+            <UserPhoto imageUri={data.user.avatar_url} sizes='Small'/>
 
             <Text style={styles.userName}>
                 {data.user.name}
