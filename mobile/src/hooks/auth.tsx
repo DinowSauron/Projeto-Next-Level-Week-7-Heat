@@ -62,7 +62,7 @@ function AuthProvider({ children }: AuthProviderProps) {
             //console.log(params)
             
             if (authSessionResponse.type === 'success' && authSessionResponse.params.error !== 'access_denied') {
-                const authResponse = await api.post("authenticate", {code: authSessionResponse.params.code, serviceType: 'mobile'});
+                const authResponse = await api.post("/authenticate", {code: authSessionResponse.params.code, serviceType: 'mobile'});
                 const { user, token } = authResponse.data as AuthResponse;
     
                 api.defaults.headers.common['Authorization'] = `Bearer ${token}`;

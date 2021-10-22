@@ -33,7 +33,7 @@ export function MessageList(){
         const timer = setInterval(()=>{
             if(messagesQueue.length > 0) {
                 setCurrentMessages(prevState => [messagesQueue[0], prevState[0], prevState[1]]);
-                messagesQueue.shift();
+                messagesQueue?.shift();
             }
         }, 3000)
 

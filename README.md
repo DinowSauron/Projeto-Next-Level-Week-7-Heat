@@ -52,12 +52,35 @@ module.exports = {
 } 
 ```
 
-* Abra 2 terminal
+* Abra 3 terminal
 * ``cd api`` - Terminal 1
 * ``yarn prisma migrate dev`` - realizar migrações no banco de dados
 * ``yarn dev`` - Terminal 1
 * ``cd web`` - Terminal 2
 * ``yarn dev`` - Terminal 2
+* ``cd mobile`` - Terminal 3
+* ``expo start`` - Terminal 3
+
+--- mix phx.new elixir_tags --no-html --no-assets
+
+# aula Elixir
+
+[instalar elixir](https://elixir-lang.org/install.html)
+instalar o elixir na sua maquina. (3hrs) 
+
+* ``elixir -v`` verifique a versão do elixir ```
+Erlang/OTP 24 [erts-12.0] [source] [64-bit] [smp:6:6] [ds:6:6:10] [async-threads:1] [jit]
+Elixir 1.12.3 (compiled with Erlang/OTP 22)```
+
+* ``mix local.hex --force`` - força instalação?
+* ``mix archive.install hex phx_new`` - phoenix com o .
+* ``mix phx.new NameApp --no-html --no-assets`` - Coloque ``Y`` 
+* ``mix new elixir_tags``
+
+
+
+
+
 
 ---
 
@@ -201,3 +224,10 @@ fetch("http://localhost:4000/messages/last3", {
 * ``yarn add @types/socket.io -D`` - tipagem.
 * ``yarn add cors`` - permite ou barra requisições na aplicação.
 * ``yarn add @types/cors -D`` - tipagem.
+
+
+
+# instalar o elixir no windows:
+
+* tente baixar direto pelo link: https://elixir-lang.org/install.html#windows
+
