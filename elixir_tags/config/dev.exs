@@ -3,9 +3,10 @@ import Config
 # Configure your database
 config :elixir_tags, ElixirTags.Repo,
   username: "postgres",
-  password: "postgres",
+  password: "789654",
   database: "elixir_tags_dev",
   hostname: "localhost",
+  port: 4500,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 

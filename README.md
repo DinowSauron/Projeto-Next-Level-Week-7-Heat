@@ -41,7 +41,7 @@ JWT_SECRET=...aleatory_key_md5
 // Web .env
 VITE_GITHUB_WEB_CLIENT_ID=...
 ```
-```.env
+```js
 // Mobile env.js
 // Note que este é um arquivo .js pois a variavel será publica.
 
@@ -53,6 +53,7 @@ module.exports = {
 ```
 
 * Abra 3 terminal
+* ``ls`` - verifique as pastas
 * ``cd api`` - Terminal 1
 * ``yarn prisma migrate dev`` - realizar migrações no banco de dados
 * ``yarn dev`` - Terminal 1
@@ -60,26 +61,6 @@ module.exports = {
 * ``yarn dev`` - Terminal 2
 * ``cd mobile`` - Terminal 3
 * ``expo start`` - Terminal 3
-
---- mix phx.new elixir_tags --no-html --no-assets
-
-# aula Elixir
-
-[instalar elixir](https://elixir-lang.org/install.html)
-instalar o elixir na sua maquina. (3hrs) 
-
-* ``elixir -v`` verifique a versão do elixir ```
-Erlang/OTP 24 [erts-12.0] [source] [64-bit] [smp:6:6] [ds:6:6:10] [async-threads:1] [jit]
-Elixir 1.12.3 (compiled with Erlang/OTP 22)```
-
-* ``mix local.hex --force`` - força instalação?
-* ``mix archive.install hex phx_new`` - phoenix com o .
-* ``mix phx.new NameApp --no-html --no-assets`` - Coloque ``Y`` 
-* ``mix new elixir_tags``
-
-
-
-
 
 
 ---
@@ -227,7 +208,88 @@ fetch("http://localhost:4000/messages/last3", {
 
 
 
-# instalar o elixir no windows:
+# aula Elixir
 
-* tente baixar direto pelo link: https://elixir-lang.org/install.html#windows
+
+* instalar o elixir na sua maquina. [instalar elixir](https://elixir-lang.org/install.html#windows)
+
+## Requisições HTTP
+
+```javascript
+// Primeira vez ao iniciar o elixir
+
+fetch("http://localhost:4000/api/message", {
+    method: "POST",
+    body: JSON.stringify({
+            message: "Teste de mensagem",
+            username: "DinowSauron",
+            email: "example@email.com",
+        }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+    },
+}).then((res) => res).then(console.log);
+``` 
+```javascript
+// Quando usa api ser capaz de retornar json
+// Envia uma mensagem no banco de dados!
+
+fetch("http://localhost:4000/api/message", {
+    method: "POST",
+    body: JSON.stringify({
+            message: "Teste de mensagem",
+            username: "DinowSauron",
+            email: "example@email.com",
+        }),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+    },
+}).then((res) => res.json()).then(console.log);
+``` 
+
+## Comandos Utilizados:
+
+* ``elixir -v`` verifique a versão do elixir 
+    ```
+    Erlang/OTP 24 [erts-12.0] [source] [64-bit] [smp:6:6] [ds:6:6:10] [async-threads:1] [jit]
+    Elixir 1.12.3 (compiled with Erlang/OTP 22)
+    ```
+
+* ``mix local.hex --force`` - força instalação?
+* ``mix archive.install hex phx_new`` - phoenix(phx) com o .
+* ``mix phx.new NameApp --no-html --no-assets`` - Coloque ``Y`` 
+<!-- * ``mix new elixir_tags`` -->
+* ``cd elixir_tags`` - entra no diretorio
+* ``mix ecto.create`` - inicia o projeto (coloque a porta, e senha do seu postgress, e instale o postgress) 
+    ```
+    $ mix ecto.create
+    Compiling 11 files (.ex)
+    Generated elixir_tags app
+    The database for ElixirTags.Repo has been created
+    ```
+
+* ``mix phx.server`` - rodar servidor
+* ``mix ecto.gen.migration migration_name`` - gera uma migração(arquivo que define como se altera e modifica o db)
+    * ``mix ecto.migrate`` - aplica a migração ao banco de dados (modifique o arquivo `priv/repo/migrations/migration_name` antes!).
+* ``iex -S mix`` - elixir interativo
+    * ``iex(1)> %ElixirTags.Message{}`` - dentro do elixir interativo, verifica o schema
+    * ``iex(2)> recompile`` - recompila o codigo que sofreu alteração
+    * ``iex(3)> ElixirTags.Message.changeset(%{message: "uma mensagem", email: "exemplo@inutil.com", username: "Dino"})`` - passa dentro da função criada os parâmetros (sem o %)
+    * ``iex(4)> h ElixirTags.Repo.insert`` - h = help depois do h coloque o comando para ver mais detalhes (ou entre na doc oficial)
+    * ``iex(5)> params = %{message: "mensgame bananosa", username: "anafabas", email: "minhoca@gmail.com"}`` - cria um mapa
+    * ``iex(5)> params |> ElixirTags.Message.changeset() |> ElixirTags.Repo.insert()`` - coloca o mapa no banco de dados...
+* ``mix deps.get`` - baixa as dependencias, ou instala novas...
+
+
+### Inicie com:
+
+* ``mix deps.get``
+* ``mix ecto.migrate``
+* ``mix phx.server``
+
+### Desafios
+* Todo dia enviar para os emails a nuvem de tags.
+* Guardar o report n obanco de dados
+
+
 

@@ -7,6 +7,9 @@ defmodule ElixirTagsWeb.Router do
 
   scope "/api", ElixirTagsWeb do
     pipe_through :api
+
+
+    post "/message", MessagesController, :create
   end
 
   # Enables LiveDashboard only for development

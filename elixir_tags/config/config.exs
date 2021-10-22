@@ -17,6 +17,10 @@ config :elixir_tags, ElixirTagsWeb.Endpoint,
   pubsub_server: ElixirTags.PubSub,
   live_view: [signing_salt: "tpi1+PgF"]
 
+config :elixir_tags, ElixirTags.Scheduler, jobs: [
+  {"* * * * * *",      {ElixirTags.Tags.Count, :call, []}},
+]
+
 # Configures the mailer
 #
 # By default it uses the "Local" adapter which stores the emails
