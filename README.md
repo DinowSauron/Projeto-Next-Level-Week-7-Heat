@@ -31,9 +31,9 @@ O Projeto da **[Next Level Week](https://nextlevelweek.com/)** desta semana foi 
         <img src="./pictures/login.png" width="49%" alt="">
     </p>
     <p style="display: flex; margin-top: 20px">
-        <img src="./pictures/phone2.png" width="33%" alt="">
-        <img src="./pictures/phone1.png" width="33%" alt="">
-        <img src="./pictures/phone3.png" width="33%" alt="">
+        <img src="./pictures/phone2.png" width="32%" alt="">
+        <img src="./pictures/phone1.png" width="32%" alt="">
+        <img src="./pictures/phone3.png" width="32%" alt="">
     </p>  
     <img src="./pictures/terminal.png" width="100%" alt="">
 </a>
