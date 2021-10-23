@@ -22,7 +22,7 @@
 O Projeto da **[Next Level Week](https://nextlevelweek.com/)** desta semana foi criar um sistema onde os usuarios podem dizer suas espectativas para o evento chamado DoWhile feito pela **[@Rocketseat](https://github.com/Rocketseat)** 
 
 
-## Fotos Da Aplicação:
+### Fotos Da Aplicação:
 
 <a href="https://github.com/DinowSauron/Projeto-Next-Level-Week-7-Heat" target="_blank">
     <img src="./pictures/main.png" width="100%" alt="">
@@ -68,11 +68,11 @@ Ao criar seu type personalizado, coloque a propiedade ``"typeRoots": ["./src/@ty
 <br/><br/>
 
 
-# Como Inicializar:
+## Como Inicializar:
 
 Lembrando que para você executar as aplicação necessita ter o Node.js instalado em sua maquina!
 
-### .Env Vars:
+#### .Env Vars:
 é necessário criar 2 app no github auth, um para o mobile e outro para a web, mais o servidor é o mesmo entre os dois, pois eu configurei para que funcionasse como um 'cross-platform'
 
 ```.env 
@@ -124,12 +124,12 @@ module.exports = {
 
 <br/><br/>
 
-# Aula REACT JS
+## Aula REACT JS
 
 A novidade desta aula para min foram os websockets, que permitem uma conecção de dados em tempo real com o servidor
 
 
-## Comandos utilizados:
+### Comandos utilizados:
 
 * ``yarn create vite web --template react-ts`` - cria o projeto vite
 * ``cd web`` - entra no diretorio front-end
@@ -143,14 +143,14 @@ A novidade desta aula para min foram os websockets, que permitem uma conecção 
 
 <br/><br/>
 
-# Aula React Native
+## Aula React Native
 
 * necessita de um emulador ou o expo instalado no celular.
 * necessita de outro app no github, com o homepage URL e o callback URL iguals, sendo { https://auth.expo.io/@YOUR_NAME_IN_EXPO/APP_NAME_IN_APP_JSON }
 * Precisa adicionar o 'scheme' no app.json com o mesmo nome da aplicação!
 <!---->
 
-* ### Snippet para o VS Code
+* #### Snippet para o VS Code
     *   Para configurar o Snippet que o Rodrigo usa durante a aula, dentro do VS Code aperte `Ctrl + Shift + P`, digite `snippet` e escolha a opção `Preferences: Configure User Snippets`.
     *   Nas próximas opções, clique em `New Global Snippets file...`
 
@@ -183,10 +183,10 @@ Extender tipagem está no Button/index.tsx
 
 <br/><br/>
 
-# Aula NODE JS
+## Aula NODE JS
 
 
-## Requests Do Servidor:
+### Requests Do Servidor:
 Preferi optar por não utilizar do insominia, pois estou estudando mais sobre o fetch então quis optar por fazer manualmente as requisições, deu super certo :D
 
 ---
@@ -247,7 +247,7 @@ fetch("http://localhost:4000/messages/last3", {
 
 
 
-## Comandos Utilizados:
+### Comandos Utilizados:
 
 * ``yarn init -y`` - Inicia o projeto com o package.json
 * ``yarn add express`` - Instala o express
@@ -272,12 +272,12 @@ fetch("http://localhost:4000/messages/last3", {
 
 <br/><br/>
 
-# Aula Elixir
+## Aula Elixir
 
 
 * instalar o elixir na sua maquina. [instalar elixir](https://elixir-lang.org/install.html#windows)
 
-## Requisições HTTP
+### Requisições HTTP
 
 ```javascript
 // Primeira vez ao iniciar o elixir
@@ -311,7 +311,7 @@ fetch("http://localhost:4000/api/message", {
 }).then((res) => res.json()).then(console.log);
 ``` 
 
-## Comandos Utilizados:
+### Comandos Utilizados:
 
 * ``elixir -v`` verifique a versão do elixir 
     ```
@@ -342,19 +342,19 @@ fetch("http://localhost:4000/api/message", {
 * ``mix deps.get`` - baixa as dependencias, ou instala novas...
 
 
-### Inicie com:
+#### Inicie com:
 
 * ``mix deps.get``
 * ``mix ecto.migrate``
 * ``mix phx.server``
 
-### Desafios
+#### Desafios
 * Todo dia enviar para os emails a nuvem de tags.
 * Guardar o report n obanco de dados
 
 
 
 
-# Licença:
+## Licença:
 Note que este projeto está sob a licensa MIT. Veja o arquivo para mais detalhes: <a href="/LICENSE">LICENSE</a>
 
