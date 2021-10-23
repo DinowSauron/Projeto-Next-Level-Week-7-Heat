@@ -12,7 +12,7 @@ let messagesQueue: MessageProps[] = [];
 // let messagesQueue: MessageProps[] = MESSAGES_EXAMPLE;
 
 const socket = io(String(api.defaults.baseURL));
-socket.on("new_menssage", (newMessage) => {
+socket.on("new_message", (newMessage) => {
     messagesQueue.push(newMessage);
 });
 
