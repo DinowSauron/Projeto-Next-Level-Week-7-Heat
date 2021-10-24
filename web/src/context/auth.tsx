@@ -34,16 +34,16 @@ export const AuthContext = createContext({} as AuthContextData);
 export function AuthProvider(props: AuthProviderProps) {
     const signInUrl = `https://github.com/login/oauth/authorize?scope=user&client_id=${import.meta.env.VITE_GITHUB_WEB_CLIENT_ID}`
     const [user, setUser] = useState<User | null>(null);
-    
-    async function signIn(githubCode: string ) {
+
+    async function signIn(githubCode: string) {
         const response = await api.post<AuthResponse>("authenticate", {
             code: githubCode
         });
 
-        const { token, user} = response.data;
-        
+        const { token, user } = response.data;
+
         localStorage.setItem("@dowhile:token", token);
-        
+
         api.defaults.headers.common.authorization = `Bearer ${token}`
 
         setUser(user);
@@ -57,7 +57,7 @@ export function AuthProvider(props: AuthProviderProps) {
     useEffect(() => {
         const token = localStorage.getItem("@dowhile:token");
 
-        if(token) {
+        if (token) {
             api.defaults.headers.common.authorization = `Bearer ${token}`
             api.get<User>("profile").then(res => {
                 setUser(res.data)
@@ -69,14 +69,14 @@ export function AuthProvider(props: AuthProviderProps) {
         const url = window.location.href;
         const hasGithubcode = url.includes("?code=");
 
-        if(hasGithubcode) {
+        if (hasGithubcode) {
             const [urlWithoutCode, githubCode] = url.split("?code=");
 
             window.history.pushState({}, "", urlWithoutCode);
 
             signIn(githubCode);
         }
-    },[])
+    }, [])
 
 
     return (

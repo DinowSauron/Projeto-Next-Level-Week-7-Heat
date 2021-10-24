@@ -12,7 +12,7 @@ router.post("/authenticate", new AuthenticateUserController().handle);
 router.post(
     "/messages",
     ensureAuthenticated,
-     new CreateMessageController().handle
+    new CreateMessageController().handle
 );
 
 router.get("/messages/last3", new GetLast3MessagesController().handle);

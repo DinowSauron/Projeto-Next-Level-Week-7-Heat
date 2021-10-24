@@ -2,7 +2,7 @@ import prismaClient from "../prisma"
 
 class ProfileUserService {
 
-    async execute(user_id: string){
+    async execute(user_id: string) {
 
         const user = await prismaClient.user.findFirst({
             where: {
@@ -15,4 +15,4 @@ class ProfileUserService {
 
 }
 
-export {ProfileUserService}
+export { ProfileUserService }

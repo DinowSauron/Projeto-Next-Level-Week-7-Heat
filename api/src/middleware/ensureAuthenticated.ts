@@ -6,14 +6,14 @@ type IPayload = {
 }
 
 export function ensureAuthenticated(
-    request: Request, 
-    response: Response, 
+    request: Request,
+    response: Response,
     next: NextFunction
 ) {
 
     const authToken = request.headers.authorization;
 
-    if(!authToken) {
+    if (!authToken) {
         return response.status(401).json({
             errorerrorCode: "token.invalid"
         })
@@ -22,7 +22,7 @@ export function ensureAuthenticated(
     // [0] Bearer
     // [1] 264012640798136071
 
-    const [, token ] = authToken.split(" ");
+    const [, token] = authToken.split(" ");
 
     try {
         const { sub } = verify(token, process.env.JWT_SECRET) as IPayload; //sub = user_id?
@@ -31,7 +31,7 @@ export function ensureAuthenticated(
 
         return next();
 
-    }catch(err) {
+    } catch (err) {
         return response.status(401).json({
             errorCode: "token.expired"
         })

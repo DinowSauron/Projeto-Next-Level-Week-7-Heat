@@ -41,10 +41,11 @@ O Projeto da **[Next Level Week](https://nextlevelweek.com/)** desta semana foi 
 ---
 
 
-## Novidades:
+## Anotações:
 * Da forma como foi criado por min, o mesmo servidor pode ser lidado para as chamadas web e as mobile, sendo mais eficiente que o servidor do evento, onde é necessário um servidor para cada plataforma!!
 
 ctrl + shift + p > reload window.
+
 
 Ao criar seu type personalizado, coloque a propiedade ``"typeRoots": ["./src/@types", "node_modules/@types"]`` no ts.config
 
@@ -141,6 +142,7 @@ A novidade desta aula para min foram os websockets, que permitem uma conecção 
 * ``yarn add socket.io-client`` - WebSockets (comunicação em tempo-real com backend)
 
 
+<br/><br/>
 <br/><br/>
 
 ## Aula React Native
@@ -276,6 +278,7 @@ fetch("http://localhost:4000/messages/last3", {
 
 
 * instalar o elixir na sua maquina. [instalar elixir](https://elixir-lang.org/install.html#windows)
+* se já possuir o elixir desatualizado, desinstale: ``choco uninstall elixir -y``
 
 ### Requisições HTTP
 
@@ -313,6 +316,7 @@ fetch("http://localhost:4000/api/message", {
 
 ### Comandos Utilizados:
 
+
 * ``elixir -v`` verifique a versão do elixir 
     ```
     Erlang/OTP 24 [erts-12.0] [source] [64-bit] [smp:6:6] [ds:6:6:10] [async-threads:1] [jit]
@@ -332,7 +336,7 @@ fetch("http://localhost:4000/api/message", {
 * ``mix phx.server`` - rodar servidor
 * ``mix ecto.gen.migration migration_name`` - gera uma migração(arquivo que define como se altera e modifica o db)
     * ``mix ecto.migrate`` - aplica a migração ao banco de dados (modifique o arquivo `priv/repo/migrations/migration_name` antes!).
-* ``iex -S mix`` - elixir interativo
+* ``iex -S mix`` - elixir interativo / ``iex.bat`` para unbuntu
     * ``iex(1)> %ElixirTags.Message{}`` - dentro do elixir interativo, verifica o schema
     * ``iex(2)> recompile`` - recompila o codigo que sofreu alteração
     * ``iex(3)> ElixirTags.Message.changeset(%{message: "uma mensagem", email: "exemplo@inutil.com", username: "Dino"})`` - passa dentro da função criada os parâmetros (sem o %)

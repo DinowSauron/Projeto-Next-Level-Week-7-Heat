@@ -1,6 +1,6 @@
 import axios from "axios";
 import prismaClient from "../prisma"
-import {sign} from 'jsonwebtoken'
+import { sign } from 'jsonwebtoken'
 
 
 type IAccessTokenResponse = {
@@ -14,12 +14,12 @@ type IUserResponse = {
   name: string;
 }
 
-class AuthenticateUserService { 
+class AuthenticateUserService {
 
   async execute(code: string, serviceType: 'web' | 'mobile' = 'web') {
 
     console.log("Server: User authentication, serviceType: " + serviceType)
-    
+
     const url = "https://github.com/login/oauth/access_token";
 
     // sistema para o backend rodar em web e mobile, o mesmo backend.
@@ -39,8 +39,8 @@ class AuthenticateUserService {
 
 
 
-      
-    const {data: accessTokenResponse} = await axios.post<IAccessTokenResponse>(url, null, {
+
+    const { data: accessTokenResponse } = await axios.post<IAccessTokenResponse>(url, null, {
       params: {
         client_id: CLIENT_ID,
         client_secret: CLIENT_SECRET,
@@ -51,7 +51,7 @@ class AuthenticateUserService {
       }
     })
     // console.log(accessTokenResponse)
- 
+
 
     const response = await axios.get<IUserResponse>("https://api.github.com/user", {
       headers: {
@@ -67,7 +67,7 @@ class AuthenticateUserService {
       }
     })
 
-    if(!user) {
+    if (!user) {
       user = await prismaClient.user.create({
         data: {
           github_id: id,
@@ -96,7 +96,7 @@ class AuthenticateUserService {
 
     //se não existir access token retorna um aviso!
 
-    return {token, user};
+    return { token, user };
 
   }
 

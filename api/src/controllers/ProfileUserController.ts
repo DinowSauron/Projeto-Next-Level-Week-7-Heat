@@ -4,8 +4,8 @@ import { ProfileUserService } from "../services/ProfileUserService";
 
 class ProfileUserController {
   async handle(request: Request, response: Response) {
-    
-    const {user_id} = request;
+
+    const { user_id } = request;
 
     const services = new ProfileUserService();
 

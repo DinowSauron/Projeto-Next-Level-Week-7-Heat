@@ -8,8 +8,8 @@ import { Message, MessageProps } from '../Message'
 import { styles } from './styles';
 import { MESSAGES_EXAMPLE } from "../../utils/messages"
 
-let messagesQueue: MessageProps[] = [];
-// let messagesQueue: MessageProps[] = MESSAGES_EXAMPLE;
+// let messagesQueue: MessageProps[] = [];
+ let messagesQueue: MessageProps[] = MESSAGES_EXAMPLE;
 
 const socket = io(String(api.defaults.baseURL));
 socket.on("new_message", (newMessage) => {

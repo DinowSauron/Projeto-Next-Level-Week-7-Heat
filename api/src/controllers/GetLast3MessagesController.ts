@@ -4,7 +4,7 @@ import { GetLast3MessagesServices } from "../services/GetLast3MessagesServices";
 
 class GetLast3MessagesController {
   async handle(request: Request, response: Response) {
-    
+
     const services = new GetLast3MessagesServices();
 
     const result = await services.execute();

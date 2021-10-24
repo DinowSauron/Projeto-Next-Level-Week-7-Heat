@@ -36,7 +36,7 @@ export function MessageList() {
                 ].filter(Boolean));
                 messagesQueue.shift();
             }
-        },)
+        }, 3000)
     }, [])
 
     useEffect(() => {
