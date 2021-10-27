@@ -34,10 +34,9 @@ class AuthenticateUserService {
       mobile: process.env.GITHUB_MOBILE_CLIENT_SECRET
     }
 
-    const CLIENT_ID = envServiceTypes_CLIENT_ID[serviceType]
-    const CLIENT_SECRET = envServiceTypes_CLIENT_SECRET[serviceType]
-
-
+    const CLIENT_ID = envServiceTypes_CLIENT_ID[serviceType];
+    const CLIENT_SECRET = envServiceTypes_CLIENT_SECRET[serviceType];
+    const JWT_TOKEN = process.env.JWT_SECRET || "JWT_DEFAULT";
 
 
     const { data: accessTokenResponse } = await axios.post<IAccessTokenResponse>(url, null, {
@@ -78,6 +77,7 @@ class AuthenticateUserService {
       })
     }
 
+    
     const token = sign(
       {
         user: {
@@ -86,12 +86,12 @@ class AuthenticateUserService {
           id: user.id,
         }
       },
-      process.env.JWT_SECRET,
+      JWT_TOKEN,
       {
         subject: user.id,
         expiresIn: "1d"
       }
-    )
+    );
     console.log("Server: User authentication: SUCESS")
 
     //se não existir access token retorna um aviso!
