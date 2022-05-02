@@ -1,6 +1,6 @@
 # Projeto-Next-Level-Week-7-Heat
 
-<a href="https://github.com/DinowSauron/Projeto-Next-Level-Week-7-Together" title="letmeask" >
+<a href="https://github.com/DinowSauron/Projeto-Next-Level-Week-7-Together" title="NLW-Heat" >
     <p align="center">
         <img 
         src="./web/src/assets/logo.svg"
